@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frame Example</title>
+  
+</head>
+<style>
+  /*.frame-container {
+    border: 2px solid #f403d8; 
+    padding: 20px; /* Padding inside the frame 
+    border-radius: 50px; /* Rounded corners for the frame 
+    width: 80%; /* Adjust width as needed 
+    
+    margin: 0 auto; /* Center the frame horizontally 
+  }*/
+
+  @keyframes websiteAnimation {
+      from {
+        width: 720px;
+        height: 1280px;
+      }
+      to {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  /* Additional styling for demonstration purposes */
+  body {
+    background-image: url("pics/product_confetti-pack_gif-all.webp");
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+  }
+ 
+  .container{
+    width: 100%; /* Set the width to 100% */
+    height: 400px; /* Set the height as needed */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Set the body height to 100% of viewport height */
+    margin: 0; /* Remove default margin */
+    text-align: center;
+  }
+  .Name{
+    border: 2px solid #f403d8;
+    border-radius: 150px;
+    width:200px;
+    height: 200px;
+    object-fit: cover;
+    overflow: hidden;
+ }
+  .container2 img{
+    position: relative; /* Position relative for absolute positioning */
+    width: 350px;
+    height: 350px;
+ }
+ .left-corner{
+  position: absolute; /* Position absolute for manual positioning */
+    top: 50%; /* Move image 50% down from the top */
+    transform: translateY(-110%); /* Adjust to vertically center the image */
+    left: 0; /* Align image to the left */
+    width: 200px; /* Set width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 20px; /* Optional: Add margin for spacing */
+ }
+ .container3 img{
+    position: relative; /* Position relative for absolute positioning */
+    width: 350px;
+    height: 350px;
+ }
+ .right-corner{
+  position: absolute; /* Position absolute for manual positioning */
+    top: 150%; /* Move image 50% down from the top */
+    transform: translateY(-210%); /* Adjust to vertically center the image */
+    left: 140vh; /* Align image to the left */
+    width: 200px; /*  Set width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Optional: Add margin for spacing */
+ }
+ .center-corner{
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    transform: translateY(-5%); /* Adjust to vertically center the image */
+    text-align: center;
+    border: 0px solid #f403d8;
+    border-radius: -10px;
+    width:300px;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+
+ }
+h2{
+    color: rgb(8, 201, 255);
+}
+h3{
+    color: aliceblue;
+}
+h1 {
+    text-align: center;
+  }
+  /* Media query for tablets and smaller devices */
+@media (max-width: 768px) {
+    .container {
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .container2 img{
+        width: 250px; /* Adjust image width */
+        height: 250px; /* Adjust image height */
+    }
+
+    .left-corner{
+      width: 100px; /* Adjust image width */
+      left: -10vb; /* Align image to the left */
+    }
+
+    .container3 img{
+        width: 250px; /* Adjust image width */
+        height: 250px; /* Adjust image height */
+    }
+
+    .right-corner{
+      width: 100px; /* Adjust image width */
+      left: 80vh; /* Align image to the left */
+    }
+    
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px; /* Adjust padding */
+    }
+
+    .container2 img{
+        width: 150px; /* Adjust image width */
+        height: 150px; /* Adjust image height */
+    }
+
+    .left-corner{
+      width: 80px; /* Adjust image width */
+    }
+    .container3 img{
+        width: 150px; /* Adjust image width */
+        height: 150px; /* Adjust image height */
+    }
+    .right-corner {
+        width: 80px; /* Adjust image width */
+    }
+}
+
+  
+</style>
+<body>
+   img
+  <div class="container">
+    <img class="Name" src="pics/3.jpg" alt="1st pic">
+    <h2>Rhea Deuna</h2>
+    <h3>HAPPY BIRTHDAY!</h3>
+    <img class="center-corner" src="pics/cake1.gif" alt="cake1">
+  </div>
+  
+  <div class="container2">
+     <img class="left-corner" src="pics/bal1.gif" alt="baloon1">
+
+     <div class="container3">
+     <img class="right-corner" src="pics/bal2.gif" alt="baloon2">
+     
+  </div>
+</body>
+</html>
+
+</html>

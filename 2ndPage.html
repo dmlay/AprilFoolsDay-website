@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Bubbles with Pictures</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #070707;
+    position: relative;
+  }
+
+  .bubble {
+    position: absolute;
+    animation: moveBubble 4s linear infinite;
+    object-fit: contain;
+    width: 180vh;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border-spacing: 20px;
+    display: flex;
+    background-repeat: no-repeat;
+  }
+
+  @keyframes moveBubble {
+    0% {
+      transform: translateY(100vh);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  #nextButton {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: popOut 1s forwards; /* Animation to pop out */
+  }
+  button{
+    background-color: rgb(17, 17, 16);
+    color: #0a0808;
+    cursor: pointer;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    transform: translateY(2550%); /* Adjust to vertically center the image */
+    text-align: center;
+    border: 0px solid #f403d8;
+    border-radius: -10px;
+  }
+button:hover{
+  color: rgb(253, 10, 192);
+}
+
+  @keyframes popOut {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>
+</head>
+<body>
+  <center><a href="3rdPage.html" target="_blank">
+    <button>Click this! 🤭</button>
+  </a></center>
+
+<script>
+  const images = ['pics/1.jpg', 'pics/2.jpg', 'pics/3.jpg', 'pics/4.jpg', 'pics/5.jpg', 'pics/6.jpg', 'pics/7.jpg', 'pics/8.jpg', 'pics/11.jpg', 'pics/12.jpg', 'pics/14.jpg', 'pics/15.jpg', 'pics/16.jpg' ]; // Add more image URLs as needed ];
+  let currentIndex = 0;
+
+  function createBubble(src) {
+    const bubble = document.createElement('img');
+    bubble.setAttribute('src', src);
+    bubble.classList.add('bubble');
+    bubble.style.left = `${Math.random() * window.innerWidth}px`;
+    document.body.appendChild(bubble);
+
+    // Remove bubble after animation completes
+    bubble.addEventListener('animationend', () => {
+      document.body.removeChild(bubble);
+      if (currentIndex === images.length - 1) {
+        document.getElementById('nextButton').style.display = 'show';
+      }
+    });
+  }
+
+  function generateBubbles() {
+    setInterval(() => {
+      const randomImage = images[currentIndex];
+      createBubble(randomImage);
+      currentIndex = (currentIndex + 1) % images.length; // Cycle through images
+    }, 1000); // Interval to create a new bubble (milliseconds)
+  }
+
+  function nextPicture() {
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+
+  generateBubbles();
+</script>
+
+<script>
+    // Show the next button when all bubbles have been displayed
+    const nextButton = document.getElementById('nextButton');
+    nextButton.style.display = 'block'; // Display the button initially
+  </script>
+</body>
+</html>
